@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+123
+<span th:text="${username}">VIP</span><br>
+<span th:text="${user.username}">VIP</span><br>
+<span th:if="${user.id>1}">id大于1</span><br>
+<span th:unless="${user.id>1}">id小于1</span><br>
+<span th:text="${user.id>1?'id>1':'id<1'}">id</span><br>
+<table>
+    <tr>
+        <th>id</th><th>username</th>
+    </tr>
+    <tr th:each="user:${list}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.username}"></td>
+    </tr>
+</table>
+    <input th:value="${#dates.format(now,'yyyy-MM-dd HH:mm:ss')}">
+
+</body>
+</html>
